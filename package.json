@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
     "start":"node server/index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
