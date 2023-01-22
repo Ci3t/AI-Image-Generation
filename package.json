@@ -5,6 +5,7 @@
   "main": "./server/index.js",
   "scripts": {
     "server": "nodemon index.js",
+    "start":"node server/index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "copy": "cp -r client/build server/",
