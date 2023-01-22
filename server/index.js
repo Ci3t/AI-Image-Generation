@@ -18,15 +18,16 @@ const PORT = 8080 || process.env.PORT
 app.use(express.json({limit:'50mb'}));
 
 
-const publicPath = path.join(__dirname, 'dist');
+const publicPath = path.join(__dirname, 'client','dist');
 app.use(express.static(publicPath));
 
 app.use('/api/v1/post',postRoutes);
 app.use('/api/v1/dalle',dalleRoutes);
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'dist','index.html'));
-  });
+    res.sendFile(path.join(publicPath,'index.html'));
+});
+
 
 app.get('/',async(req,res)=>{
     res.send('Hello DALL-E!')
